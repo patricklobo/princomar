@@ -1,0 +1,12 @@
+.icon-editar {
+  color: rgb(175, 120, 64);
+  font-size: 20px;
+}
+.icon-deletar {
+  font-size: 20px;
+  color: rgb(198, 89, 89);
+}
+
+.form-editando {
+  background-color: rgb(211, 214, 160);
+}
