@@ -16,7 +16,6 @@ class UsuarioBD {
 
   public function getUsuario(){
     $this->vetUsuario = array();
-
     $this->sql = "SELECT * FROM usuario ";
     $this->conexao->execSQL($this->sql);
     $this->usuario = new Usuario();

@@ -5,7 +5,7 @@ class Peixe {
   private $id;
   private $descricao;
   private $tipo;
-  
+
 
   public function getId() {
     return $this->id;
@@ -14,6 +14,21 @@ class Peixe {
   public function setId($id) {
     $this->id = $id;
   }
+
+  public function descTipo($tipo) {
+    switch ($tipo) {
+      case 'P':
+      return "Processado";
+      break;
+      case 'B':
+      return "Bruto";
+      break;
+      default:
+      # code...
+      break;
+    }
+  }
+
 
   public function getDescricao() {
     return $this->descricao;

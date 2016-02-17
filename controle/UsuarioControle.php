@@ -1,7 +1,4 @@
 <?php
-foreach (glob("classe/*.php") as $filename) {
-  require_once $filename;
-}
 
 class UsuarioControle
 {
