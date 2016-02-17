@@ -17,7 +17,6 @@ class UsuarioControle
     if(!empty($_POST)){
       if($this->sessao->login($_POST['nomeuser'], $_POST['senha'])){
         header("Location: ../usuario/home");
-      } else {
       }
     }
   }
