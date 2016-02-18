@@ -30,6 +30,22 @@ class PeixeBD {
     return $this->vetPeixe;
   }
 
+  public function getPeixeTipo($tipo){
+    $this->vetPeixe = array();
+
+    $this->sql = "SELECT * FROM peixe WHERE tipo = '$tipo' ORDER BY descricao ";
+    $this->conexao->execSQL($this->sql);
+    $this->peixe = new Peixe();
+    while ($row = $this->conexao->listarResultados()) {
+      $this->peixe = new Peixe();
+      $this->peixe ->setId($row['id']);
+      $this->peixe ->setDescricao($row['descricao']);
+      $this->peixe ->setTipo($row['tipo']);
+      array_push($this->vetPeixe, $this->peixe);
+    }
+    return $this->vetPeixe;
+  }
+
   public function getPeixeUni($idpeixe) {
     $this->sql = "SELECT * FROM peixe WHERE id = '$idpeixe' ";
     $this->conexao->execSQL($this->sql);

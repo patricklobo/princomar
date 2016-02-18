@@ -4,12 +4,21 @@
       <ul class="nav navbar-nav">
         <li><a href="#">Início</a></li>
         <!-- <li><a href="#">Link</a></li> -->
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Peixes
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="<?=DIRETORIO?>peixe/gerenciar">Gerenciar</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Movimento
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="<?=DIRETORIO?>entrada/cadastrar/pagina/0">Entrada</a></li>
           </ul>
         </li>
         <li class="dropdown">

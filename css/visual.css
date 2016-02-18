@@ -10,3 +10,15 @@
 .form-editando {
   background-color: rgb(211, 214, 160);
 }
+.paginacao{
+  display: inline;
+  position: relative;
+  float: right;
+  padding-right: 20px;
+}
+
+.paginacao span{
+  color: rgb(25, 66, 187);
+  padding-right: 20px;
+  font-size: 20px;
+}

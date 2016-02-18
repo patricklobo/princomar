@@ -9,6 +9,8 @@ class PeixeControle
     $this->peixeBD = new PeixeBD;
     $this->sessao = new Sessao;
     $this->validador = new Validador;
+    $this->sessao->verifica();
+    require_once "visao/menu.php";
   }
 
   function excluir($id){
@@ -19,7 +21,6 @@ class PeixeControle
   }
 
   function gerenciar(){
-    $this->sessao->verifica();
     $this->sessao->permissao(9);
     if(!empty($_REQUEST['excluir'])){
       $this->excluir($_REQUEST['excluir']);
@@ -47,8 +48,6 @@ class PeixeControle
         }
       }
     }
-
-    require_once "visao/menu.php";
     require_once "visao/peixe/gerenciar.php";
   }
 }
