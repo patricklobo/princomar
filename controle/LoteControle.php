@@ -14,6 +14,12 @@ class LoteControle
 
   }
 
+  function teste(){
+
+    echo "teste";
+
+  }
+
   function Cadastrar(){
     $this->sessao->verifica();
     $this->sessao->permissao(9);
