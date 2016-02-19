@@ -19,8 +19,9 @@
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="<?=DIRETORIO?>entrada/cadastrar/pagina/0">Entrada</a></li>
+              <li><a href="<?DIRETORIO?>../lote/cadastrar">Lote</a></li>
           </ul>
-        </li>
+       </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Usuários
