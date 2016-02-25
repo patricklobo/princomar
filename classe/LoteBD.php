@@ -1,6 +1,6 @@
 <?php
 
-class LoteBD { 
+class LoteBD {
 
 private $conexao;
 private $lote;
@@ -56,7 +56,7 @@ public function setLote($operacao, $lote) {
 $validador = new Validador();
 $id = $lote ->getId();
 $peixe = $lote ->getPeixe();
-$usuario = $_SESSION['usuarioId'];
+$usuario = $_SESSION['id'];
 $data = $lote ->getData();
 $validade = $lote ->getValidade();
 $entrada = $lote ->getEntrada();

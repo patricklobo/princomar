@@ -19,7 +19,7 @@
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="<?=DIRETORIO?>entrada/cadastrar/pagina/0">Entrada</a></li>
-              <li><a href="<?DIRETORIO?>../lote/cadastrar">Lote</a></li>
+              <li><a href="<?=DIRETORIO?>/lote/cadastrar">Lote</a></li>
           </ul>
        </li>
         <li class="dropdown">

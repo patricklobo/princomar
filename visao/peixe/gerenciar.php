@@ -26,7 +26,7 @@ if(!empty($_REQUEST['peixe'])){
     </div>
     <?=$_REQUEST['alert']?>
     <div class="panel-body <?=$ativacor?>" >
-      <form method="post" action="">
+       <form method="post" action="">
         <input type="hidden" name="id" value="<?=$id?>">
         <div class="form-group">
           <label>Descricao</label>

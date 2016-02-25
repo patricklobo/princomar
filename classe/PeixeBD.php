@@ -46,6 +46,8 @@ class PeixeBD {
     return $this->vetPeixe;
   }
 
+
+
   public function getPeixeUni($idpeixe) {
     $this->sql = "SELECT * FROM peixe WHERE id = '$idpeixe' ";
     $this->conexao->execSQL($this->sql);

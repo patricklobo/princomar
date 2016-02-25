@@ -33,6 +33,24 @@ class EntradaBD {
     return $this->vetEntrada;
   }
 
+  public function getEntradaSelectUltimos(){
+    $this->vetEntrada = array();
+    $this->sql = "SELECT * FROM entrada ORDER BY id DESC LIMIT 100";
+    $this->conexao->execSQL($this->sql);
+    $this->entrada = new Entrada();
+    while ($row = $this->conexao->listarResultados()) {
+      $this->entrada = new Entrada();
+      $this->entrada ->setId($row['id']);
+      $this->entrada ->setPeso($row['peso']);
+      $this->entrada ->setData($row['data']);
+      $this->entrada ->setPeixe($row['peixe']);
+      $this->entrada ->setCriado($row['criado']);
+      $this->entrada ->setUsuario($row['usuario']);
+      array_push($this->vetEntrada, $this->entrada);
+    }
+    return $this->vetEntrada;
+  }
+
   public function getEntradaUltimos($pagina){
     $porpagina = 10;
     $inipafina = ($porpagina * $pagina);

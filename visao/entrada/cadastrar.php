@@ -109,6 +109,7 @@ if($_REQUEST['pagina'] != ""){
               </td>
 
             </tr>
+            acho $lista;
           <?php endforeach;?>
 
         </tr>

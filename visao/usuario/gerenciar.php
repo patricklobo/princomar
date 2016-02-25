@@ -100,8 +100,8 @@ if(!empty($_REQUEST['usuario'])){
             </td>
           </tr>
 
-          <?php  foreach($lista as $lista): ?>
-            <tr>
+          <?php  foreach ($lista as $lista):  ?>
+              <tr>
               <td>
                 <?=$lista->getId()?>
               </td>
@@ -121,7 +121,7 @@ if(!empty($_REQUEST['usuario'])){
                 <?=$validador->dataTimeStampToFormatoBrasil($lista->getAlterado())?>
               </td>
               <td>
-                <a href="<?=DIRETORIO?>usuario/gerenciar/editar/<?=$lista->getId()?>">
+                 <a href="<?=DIRETORIO?>usuario/gerenciar/editar/<?=$lista->getId()?>">
                   <span class="icon-editar glyphicon glyphicon-edit" aria-hidden="true"></span>
                 </a>
 
@@ -134,7 +134,6 @@ if(!empty($_REQUEST['usuario'])){
 
             </tr>
           <?php endforeach;?>
-
         </tr>
       </table>
     </div>

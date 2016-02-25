@@ -75,6 +75,11 @@ class Validador {
         return $data;
     }
 
+    public function geraValidade($data, $dias){
+      $datafinal = date('d/m/Y', strtotime("+$dias days",strtotime($data)));
+      return $datafinal;
+    }
+
     public function dataAtualBackup() {
         $timestamp = mktime(date("H") - 3, date("i"), date("s"), date("m"), date("d"), date("Y"));
         $data = gmdate("d-m-Y_H-i", $timestamp);

@@ -14,22 +14,18 @@ class LoteControle
 
   }
 
-  function teste(){
-
-    echo "teste";
-
-  }
 
   function Cadastrar(){
     $this->sessao->verifica();
     $this->sessao->permissao(9);
     if(!empty($_POST)){
       $this->lote->setPeixe($_POST['peixe']);
-      $this->lote->setValidade;
+      $this->lote->setValidade($_POST['validade']);
+      $this->lote->setData($this->validador->dataAtualBD());
+      $this->lote->setEntrada($_POST['entrada']);
+      $this->loteBD->setLote("I", $this->lote);
       $_REQUEST['alert'] = "<div class='alert alert-success' role='alert'>Cadastrado com sucesso!</div>";
-
     }
-
     require_once "visao/lote/cadastrar.php";
   }
 

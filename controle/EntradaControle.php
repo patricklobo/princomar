@@ -16,7 +16,8 @@ class EntradaControle
     require_once "visao/menu.php";
   }
 
-  function Cadastrar(){
+  function Cadastrar()
+  {
     $this->sessao->verifica();
     $this->sessao->permissao(9);
     if(!empty($_POST)){
