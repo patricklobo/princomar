@@ -1,14 +1,15 @@
 <?php
-$lote = new Lote;
-$loteBD = new LoteBD;
+$pesagem_a = new Pesagem_a;
+$Pesagem_aBD = new Pesagem_aBD;
 $usuario = new UsuarioBD;
 $peixeBD = new PeixeBD;
 $peixe = new Peixe;
 $peixes = $peixeBD->getPeixeTipo("P");
 $validador = new Validador;
-$lista = $loteBD->getLote();
+$lista = $Pesagem_aBD->getPesagem_a();
 $entradaBD = new EntradaBD;
 $entradas = $entradaBD->getEntradaSelectUltimos();
+$portes = array("P","M","G");
 // debug($entradas);
 ?>
 
@@ -18,26 +19,12 @@ $entradas = $entradaBD->getEntradaSelectUltimos();
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Cadatrar lote</h3>
+      <h3 class="panel-title">Cadatrar Peso A</h3>
     </div>
     <?=$_REQUEST['alert']?>
     <div class="panel-body" >
       <form method="post" action="">
         <div class="form-group">
-          <label>Peixe</label>
-          <select name="peixe" required class="form-control">
-            <option value="">Selecione...</option>
-            <?php  foreach($peixes as $objpeixe): ?>
-              <option value="<?=$objpeixe->getId()?>"><?=$objpeixe->getDescricao()?></option>
-            <?php endforeach;?>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Data de validade</label>
-          <input class="form-control" required name="validade">
-        </div>
-        <div class="form-group">
-
           <label>Entrada</label>
           <select name="entrada" required class="form-control">
             <?php
@@ -45,13 +32,30 @@ $entradas = $entradaBD->getEntradaSelectUltimos();
             <?php
             $objPeixe = $peixeBD->getPeixeUni($objentrada->getPeixe());
             ?>
-
             <option value="<?=$objentrada->getId()?>"><?=$objentrada->getId()?> - <?=$objPeixe->getDescricao()?> - <?=$objentrada->getPeso()?>Kg</option>
           <?php endforeach;?>
           <option value="">Selecione</option>
-
         </select>
-      </div>
+        </div>
+        <div class="form-group">
+          <label>Peso</label>
+          <input class="form-control" required name="porte">
+        </div>
+        <div class="form-group">
+        <label>Porte</label>
+        <select name="porte" required class="form-control">
+          <?php
+          if(!empty($_REQUEST['porte'])){
+            echo "<option value='".$porte."'>".$pesagem_a->descPorte($porte)."</option>";
+          }
+          ?>
+          <option value="">Selecione...</option>
+          <?php  foreach($portes as $porte): ?>
+            <option value="<?=$porte?>"><?=$pesagem_a->descPorte($porte)?></option>
+          <?php endforeach;?>
+        </select>
+
+       </div>
       <button type="submit" class="btn btn-default">Cadastrar</button>
     </form>
   </div>
@@ -60,7 +64,7 @@ $entradas = $entradaBD->getEntradaSelectUltimos();
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="panel panel-default">
-      <div class="panel-heading">Listando lotes cadastrados </div>
+      <div class="panel-heading">Listando Pesagem A </div>
       <table class="table table-striped">
         <tr>
           <td>
@@ -70,16 +74,17 @@ $entradas = $entradaBD->getEntradaSelectUltimos();
             <b>Entrada/Descrição/Peso</b>
           </td>
           <td>
-            <b>Peixe</b>
+            <b>Peso</b>
           </td>
           <td>
-            <b>Validade</b>
+            <b>Porte</b>
           </td>
           <td>
             <b>Criado</b>
           </td>
           <td>
             <b>Usuário</b>
+          </td>
           <td>
 
           </td>
@@ -98,26 +103,23 @@ $entradas = $entradaBD->getEntradaSelectUltimos();
               <?=$entrada->getId()?>- <?=$peixe->getDescricao()?> - <?=$entrada->getPeso()?>Kg
             </td>
             <td>
-              <?=$peixeBD->getPeixeUni($lista->getPeixe())->getDescricao()?>
+              <?=$lista->getPeso()?>Kg
             </td>
             <td>
-              <?php
-              echo $validador->geraValidade($entrada->getData(), $lista->getValidade());
-              //echo date('d/m/Y', strtotime('+5 days', strtotime('14-07-2014')));
-              ?>
+            <?=$lista->getPorte()?>
             </td>
             <td>
               <?=$validador->dataTimeStampToFormatoBrasil($lista->getCriado())?>
             </td>
             <td>
+<?print_r($lista) ?>
               <?=$usuario->getUsuarioUni($lista->getUsuario())->getNome()?>
             </td>
             <td>
               <a href="<?=DIRETORIO?>usuario/gerenciar/excluir/<?=$lista->getId()?>">
-              <span class="icon-deletar glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                <span class="icon-deletar glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
               </a>
             </td>
-
           </tr>
         <?php endforeach;?>
       </tr>

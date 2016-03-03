@@ -50,7 +50,24 @@ class Pesagem_a {
     $this->porte = $porte;
   }
 
-  public function getUsuario() {
+  public function descPorte($porte) {
+    switch ($porte) {
+      case 'P':
+      return "Pequeno";
+      break;
+      case 'M':
+      return "Médio";
+      break;
+      case 'G':
+      return "Grande";
+      break;
+      default;
+      # code...
+      break;
+    }
+  }
+
+    public function getUsuario() {
     return $this->usuario;
   }
 

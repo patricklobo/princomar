@@ -2,6 +2,7 @@
 
 class UsuarioControle
 {
+
   function UsuarioControle(){
     $this->usuario = new Usuario;
     $this->usuarioBD = new UsuarioBD;
