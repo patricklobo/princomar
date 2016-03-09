@@ -56,7 +56,7 @@ class Pesagem_aBD {
     $entrada = $pesagem_a ->getEntrada();
     $peso = $pesagem_a ->getPeso();
     $porte = $pesagem_a ->getPorte();
-    $usuario = $_SESSION['usuarioId'];
+    $usuario = $_SESSION['id'];
 
     switch ($operacao) {
 

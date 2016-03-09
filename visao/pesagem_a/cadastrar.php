@@ -19,7 +19,7 @@ $portes = array("P","M","G");
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Cadatrar Peso A</h3>
+      <h3 class="panel-title">Cadastrar Peso A</h3>
     </div>
     <?=$_REQUEST['alert']?>
     <div class="panel-body" >
@@ -39,7 +39,7 @@ $portes = array("P","M","G");
         </div>
         <div class="form-group">
           <label>Peso</label>
-          <input class="form-control" required name="porte">
+          <input class="form-control" required name="peso">
         </div>
         <div class="form-group">
         <label>Porte</label>
@@ -112,7 +112,6 @@ $portes = array("P","M","G");
               <?=$validador->dataTimeStampToFormatoBrasil($lista->getCriado())?>
             </td>
             <td>
-<?print_r($lista) ?>
               <?=$usuario->getUsuarioUni($lista->getUsuario())->getNome()?>
             </td>
             <td>

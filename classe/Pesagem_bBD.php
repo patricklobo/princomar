@@ -1,6 +1,6 @@
 <?php
 
-class Pesagem_bBD { 
+class Pesagem_bBD {
 
 private $conexao;
 private $pesagem_b;
@@ -53,7 +53,7 @@ $validador = new Validador();
 $id = $pesagem_b ->getId();
 $lote = $pesagem_b ->getLote();
 $peso = $pesagem_b ->getPeso();
-$usuario = $_SESSION['usuarioId'];
+$usuario = $_SESSION['id'];
 
 switch ($operacao) {
 

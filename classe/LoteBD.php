@@ -84,4 +84,23 @@ break;
 
 }
 }
+
+  public function getLoteSelectUltimos(){
+    $this->vetLote = array();
+    $this->sql = "SELECT * FROM lote ORDER BY id DESC LIMIT 100";
+    $this->conexao->execSQL($this->sql);
+    $this->lote = new Lote();
+    while ($row = $this->conexao->listarResultados()) {
+      $this->lote = new Lote();
+      $this->lote ->setId($row['id']);
+      $this->lote ->setPeixe($row['peixe']);
+      $this->lote ->setUsuario($row['usuario']);
+      $this->lote ->setCriado($row['criado']);
+      $this->lote ->setData($row['data']);
+      $this->lote->setValidade($row['validade']);
+      $this->lote->setEntrada($row['entrada']);
+      array_push($this->vetLote, $this->lote);
+    }
+    return $this->vetLote;
+  }
 }
