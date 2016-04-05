@@ -67,7 +67,7 @@ $peixeBD = new peixeBD;
           </td>
         </tr>
 
-        <?php  foreach ($lista as $listas):  ?>
+        <?php  foreach ($lista as $listas): ?>
           <tr>
             <td>
               <?=$listas->getId()?>
@@ -85,7 +85,7 @@ $peixeBD = new peixeBD;
               <?=$usuario->getUsuarioUni($listas->getUsuario())->getNome()?>
             </td>
             <td>
-              <a href="<?=DIRETORIO?>usuario/gerenciar/excluir/<?=$lista->getId()?>">
+              <a href="<?=DIRETORIO?>usuario/gerenciar/excluir/<?=$listas->getId()?>">
                 <span class="icon-deletar glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
               </a>
             </td>

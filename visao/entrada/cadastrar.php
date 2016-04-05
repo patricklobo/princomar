@@ -103,7 +103,7 @@ if($_REQUEST['pagina'] != ""){
                 <?=$usuario->getUsuarioUni($lista->getUsuario())->getNome()?>
               </td>
               <td>
-                <a href="<?=DIRETORIO?>usuario/gerenciar/excluir/<?=$lista->getId()?>">
+              <a href="<?=DIRETORIO?>usuario/gerenciar/excluir/<?=$lista->getId()?>">
                   <span class="icon-deletar glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
                 </a>
               </td>
